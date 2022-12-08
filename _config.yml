@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 
 title: 개발 일기                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: 개밸한 프로그램들과 개발 지식이 담긴 창고   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
