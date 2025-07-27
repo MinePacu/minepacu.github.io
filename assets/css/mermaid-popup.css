@@ -223,11 +223,11 @@
 
 @media (max-width: 768px) {
   .mermaid-popup-container {
-    /* For tablets */
-    width: calc(100vw - 4vw); /* 2vw padding on each side */
-    height: calc((100vw - 4vw) * 9 / 16);
-    max-height: calc(100vh - 4vh);
-    max-width: calc((100vh - 4vh) * 16 / 9);
+    /* For tablets - appropriate padding for touch interaction */
+    width: calc(100vw - 40px); /* 20px padding on each side */
+    height: calc((100vw - 40px) * 9 / 16);
+    max-height: calc(100vh - 60px); /* 30px padding top/bottom */
+    max-width: calc((100vh - 60px) * 16 / 9);
     border-radius: 8px;
   }
   
@@ -246,11 +246,11 @@
 
 @media (max-width: 480px) {
   .mermaid-popup-container {
-    /* For mobile phones */
-    width: calc(100vw - 2vw); /* 1vw padding on each side */
-    height: calc((100vw - 2vw) * 9 / 16);
-    max-height: calc(100vh - 2vh);
-    max-width: calc((100vh - 2vh) * 16 / 9);
+    /* For mobile phones - minimal padding for maximum content area */
+    width: calc(100vw - 24px); /* 12px padding on each side */
+    height: calc((100vw - 24px) * 9 / 16);
+    max-height: calc(100vh - 40px); /* 20px padding top/bottom */
+    max-width: calc((100vh - 40px) * 16 / 9);
     border-radius: 6px;
   }
   
