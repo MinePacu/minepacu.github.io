@@ -2,3 +2,6 @@
 {% if page.mermaid %}
 <link rel="stylesheet" href="{{ '/assets/css/mermaid-popup.css' | relative_url }}">
 {% endif %}
+{% if page.mathjax %}
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}

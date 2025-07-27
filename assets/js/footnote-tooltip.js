@@ -258,32 +258,47 @@ class FootnoteTooltip {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
     
+    // 이미지가 포함된 툴팁인지 확인
+    const hasImage = this.tooltip.querySelector('img') !== null;
+    const gap = hasImage ? 15 : 10; // 이미지가 있으면 더 큰 간격
+    
     console.log('Link rect:', linkRect);
     console.log('Tooltip rect:', tooltipRect);
     console.log('Viewport:', { width: viewportWidth, height: viewportHeight });
+    console.log('Has image:', hasImage);
     
     // For fixed positioning, use viewport coordinates (no scroll offset needed)
     // Default position: above the link, centered
     let left = linkRect.left + (linkRect.width / 2) - (tooltipRect.width / 2);
-    let top = linkRect.top - tooltipRect.height - 10; // 10px gap
+    let top = linkRect.top - tooltipRect.height - gap;
     
     console.log('Initial position:', { left, top });
     
     // Adjust horizontal position if tooltip goes off screen
-    if (left < 10) {
-      left = 10;
-    } else if (left + tooltipRect.width > viewportWidth - 10) {
-      left = viewportWidth - tooltipRect.width - 10;
+    const horizontalMargin = hasImage ? 15 : 10;
+    if (left < horizontalMargin) {
+      left = horizontalMargin;
+    } else if (left + tooltipRect.width > viewportWidth - horizontalMargin) {
+      left = viewportWidth - tooltipRect.width - horizontalMargin;
     }
     
     // If tooltip goes above viewport, show below the link instead
-    if (top < 10) {
-      top = linkRect.bottom + 10;
+    const verticalMargin = hasImage ? 20 : 10;
+    if (top < verticalMargin) {
+      top = linkRect.bottom + gap;
       // Adjust arrow direction by toggling a class
       this.tooltip.classList.add('below');
       console.log('Positioning below link');
+      
+      // 아래쪽에 배치해도 화면을 벗어나는 경우 중앙에 배치
+      if (top + tooltipRect.height > viewportHeight - verticalMargin) {
+        top = Math.max(verticalMargin, (viewportHeight - tooltipRect.height) / 2);
+        this.tooltip.classList.add('center');
+        console.log('Positioning in center of screen');
+      }
     } else {
       this.tooltip.classList.remove('below');
+      this.tooltip.classList.remove('center');
       console.log('Positioning above link');
     }
     

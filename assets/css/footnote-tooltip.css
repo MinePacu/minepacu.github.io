@@ -1,0 +1,105 @@
+/* Footnote Tooltip Styles */
+.footnote-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 300px;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.footnote-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.footnote-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  border-bottom: none;
+}
+
+/* Arrow for tooltip positioned below the link */
+.footnote-tooltip.below::before {
+  top: -5px;
+  border-top: none;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Dark mode support */
+[data-mode="dark"] .footnote-tooltip {
+  background: rgba(40, 40, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-mode="dark"] .footnote-tooltip::before {
+  border-top-color: rgba(40, 40, 40, 0.95);
+}
+
+[data-mode="dark"] .footnote-tooltip.below::before {
+  border-bottom-color: rgba(40, 40, 40, 0.95);
+}
+
+/* Light mode support */
+[data-mode="light"] .footnote-tooltip {
+  background: rgba(20, 20, 20, 0.9);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-mode="light"] .footnote-tooltip::before {
+  border-top-color: rgba(20, 20, 20, 0.9);
+}
+
+[data-mode="light"] .footnote-tooltip.below::before {
+  border-bottom-color: rgba(20, 20, 20, 0.9);
+}
+
+/* Enhanced footnote link styling */
+a.footnote {
+  position: relative;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  transition: all 0.2s ease;
+}
+
+a.footnote:hover {
+  background-color: var(--footnote-target-bg);
+  border-radius: 3px;
+  border-bottom-style: solid;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footnote-tooltip {
+    max-width: calc(100vw - 40px);
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footnote-tooltip {
+    max-width: calc(100vw - 20px);
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}

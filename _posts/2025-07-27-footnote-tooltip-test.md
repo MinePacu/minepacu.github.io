@@ -29,6 +29,8 @@ tags: [footnote, tooltip, test]
 
 각주에는 이미지도 포함할 수 있습니다[^image-note]. 작은 아이콘이나 스크린샷 등을 보여줄 때 유용합니다.
 
+이제 더 큰 이미지도 잘 표시됩니다[^large-image]. 가독성이 훨씬 좋아졌습니다!
+
 ### 사용 방법
 
 **데스크톱에서:**
@@ -57,3 +59,5 @@ tags: [footnote, tooltip, test]
 [^code-note]: 프로그래밍에서 자주 사용하는 `console.log()` 함수나 `document.querySelector()` 같은 코드도 각주에 포함될 수 있습니다.
 
 [^image-note]: 이 각주에는 작은 이미지가 포함되어 있습니다: ![Jekyll Logo](https://jekyllrb.com/img/logo-2x.png){: width="50" height="50"} Jekyll 로고를 각주에서 볼 수 있습니다.
+
+[^large-image]: 이것은 더 큰 이미지의 예시입니다. 개선된 툴팁에서 가독성이 훨씬 좋아졌습니다! ![ASUS Header](/img/250724/header.png) 이미지가 적절한 크기로 표시되어 세부사항을 확인할 수 있습니다.
