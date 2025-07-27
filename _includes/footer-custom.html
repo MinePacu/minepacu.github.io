@@ -1,0 +1,5 @@
+<!-- Custom footer content for Mermaid popup functionality -->
+{% if page.mermaid %}
+<script src="{{ '/assets/js/mermaid-popup.js' | relative_url }}"></script>
+{% include mermaid-popup.html %}
+{% endif %}

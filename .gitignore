@@ -14,6 +14,13 @@ _site
 # NPM dependencies
 node_modules
 package-lock.json
+npm-debug.log*
+
+# Build outputs
+assets/js/app.min.js*
+assets/js/sw.min.js*
+assets/js/mermaid-popup.min.js*
+assets/css/main.css*
 
 # IDE configurations
 .idea

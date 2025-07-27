@@ -1,0 +1,42 @@
+{
+  "name": "minepacu-blog",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MinePacu's development blog with Mermaid popup functionality",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "rollup -c",
+    "build:css": "sass --style=compressed _sass/main.scss:assets/css/main.css",
+    "watch": "npm run watch:js & npm run watch:css",
+    "watch:js": "rollup -c --watch",
+    "watch:css": "sass --watch _sass/main.scss:assets/css/main.css",
+    "dev": "npm run watch",
+    "clean": "rimraf assets/js/app.min.js* assets/js/sw.min.js* assets/js/mermaid-popup.min.js* assets/css/main.css*",
+    "lint": "eslint _javascript/**/*.js assets/js/**/*.js",
+    "lint:fix": "eslint _javascript/**/*.js assets/js/**/*.js --fix",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "jekyll",
+    "blog",
+    "mermaid",
+    "popup",
+    "development"
+  ],
+  "author": "MinePacu",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.9.6",
+    "sass": "^1.69.7",
+    "eslint": "^8.56.0",
+    "rimraf": "^5.0.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

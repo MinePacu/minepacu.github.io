@@ -1,0 +1,202 @@
+/* Footnote Tooltip Styles */
+.footnote-tooltip {
+  position: fixed; /* Use fixed positioning to handle scroll properly */
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  max-width: 300px;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Style images inside tooltips */
+.footnote-tooltip img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 4px 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Style code inside tooltips */
+.footnote-tooltip code {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+/* Style links inside tooltips */
+.footnote-tooltip a {
+  color: #87ceeb;
+  text-decoration: underline;
+}
+
+.footnote-tooltip a:hover {
+  color: #add8e6;
+}
+
+.footnote-tooltip.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  display: block !important;
+}
+
+.footnote-tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.9);
+  border-bottom: none;
+}
+
+/* Arrow for tooltip positioned below the link */
+.footnote-tooltip.below::before {
+  top: -5px;
+  border-top: none;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Dark mode support */
+[data-mode="dark"] .footnote-tooltip {
+  background: rgba(40, 40, 40, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-mode="dark"] .footnote-tooltip::before {
+  border-top-color: rgba(40, 40, 40, 0.95);
+}
+
+[data-mode="dark"] .footnote-tooltip.below::before {
+  border-bottom-color: rgba(40, 40, 40, 0.95);
+}
+
+/* Light mode support */
+[data-mode="light"] .footnote-tooltip {
+  background: rgba(20, 20, 20, 0.9);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-mode="light"] .footnote-tooltip::before {
+  border-top-color: rgba(20, 20, 20, 0.9);
+}
+
+[data-mode="light"] .footnote-tooltip.below::before {
+  border-bottom-color: rgba(20, 20, 20, 0.9);
+}
+
+/* Enhanced footnote link styling */
+a.footnote {
+  position: relative;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  transition: all 0.2s ease;
+}
+
+a.footnote:hover {
+  background-color: var(--footnote-target-bg);
+  border-radius: 3px;
+  border-bottom-style: solid;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footnote-tooltip {
+    max-width: calc(100vw - 40px);
+    font-size: 15px;
+    padding: 14px 18px;
+    line-height: 1.6;
+    margin: 10px;
+    
+    /* Better touch feedback */
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Enhanced mobile animation */
+  .footnote-tooltip.show {
+    animation: mobileTooltipShow 0.3s ease-out;
+  }
+  
+  /* Touch-friendly footnote links */
+  a.footnote {
+    padding: 4px 2px;
+    min-height: 44px; /* iOS accessibility guidelines */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  a.footnote:active {
+    background-color: var(--footnote-target-bg);
+    transform: scale(0.95);
+  }
+}
+
+@media (max-width: 480px) {
+  .footnote-tooltip {
+    max-width: calc(100vw - 30px);
+    font-size: 16px;
+    padding: 16px 20px;
+    line-height: 1.7;
+  }
+}
+
+/* Mobile tooltip animation */
+@keyframes mobileTooltipShow {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Touch device specific styles */
+@media (hover: none) and (pointer: coarse) {
+  /* This targets touch devices specifically */
+  .footnote-tooltip {
+    /* Larger touch targets */
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    border-radius: 10px;
+  }
+  
+  a.footnote {
+    /* Larger touch target for footnote links */
+    padding: 6px 4px;
+    margin: 2px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 6px;
+  }
+  
+  /* Visual feedback for touch */
+  a.footnote:active {
+    background-color: rgba(var(--link-color), 0.1);
+    transform: scale(0.95);
+  }
+}

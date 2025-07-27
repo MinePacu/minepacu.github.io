@@ -1,0 +1,275 @@
+/* Mermaid Popup Styles */
+.mermaid-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: none;
+  cursor: zoom-out;
+}
+
+/* Ensure only one overlay is visible at a time */
+.mermaid-popup-overlay:not(:last-of-type) {
+  display: none !important;
+}
+
+.mermaid-popup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 16:9 aspect ratio with left/right padding */
+  width: calc(100vw - 8vw); /* 4vw padding on each side */
+  height: calc((100vw - 8vw) * 9 / 16); /* 16:9 ratio based on width */
+  /* Ensure it doesn't exceed viewport height */
+  max-height: calc(100vh - 8vh); /* 4vh padding on top/bottom */
+  /* Adjust width if height constraint is active */
+  max-width: calc((100vh - 8vh) * 16 / 9);
+  overflow: hidden;
+  background: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
+  cursor: default;
+  pointer-events: auto;
+}
+
+/* Dark mode support for popup container */
+[data-mode="dark"] .mermaid-popup-container {
+  background: #0f0f0f;
+  border: 1px solid #333333;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.mermaid-popup-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* Change from auto to visible to prevent clipping */
+  cursor: grab;
+  transition: transform 0.1s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: transparent; /* Make content background transparent */
+}
+
+/* Remove dark mode background override for content */
+
+.mermaid-popup-content:active {
+  cursor: grabbing;
+}
+
+.mermaid-popup-content svg {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  /* Improve text rendering */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: always;
+  /* Enhance contrast and sharpness */
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.mermaid-popup-content .mermaid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background: transparent !important;
+}
+
+/* PRESERVE ORIGINAL DIAGRAM COLORS - No background overrides */
+.mermaid-popup-content svg,
+.mermaid-popup-content svg g,
+.mermaid-popup-content svg rect,
+.mermaid-popup-content svg polygon,
+.mermaid-popup-content svg ellipse,
+.mermaid-popup-content svg circle,
+.mermaid-popup-content svg path {
+  /* Keep all original colors intact */
+}
+
+/* Only enhance text rendering - preserve original text colors completely */
+.mermaid-popup-content svg text,
+.mermaid-popup-content svg .label,
+.mermaid-popup-content svg tspan {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif !important;
+  font-weight: 600 !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.mermaid-popup-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10002;
+  pointer-events: auto;
+  /* Keep controls always visible regardless of content transform */
+  transform: none !important;
+}
+
+.mermaid-popup-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  pointer-events: auto;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mermaid-popup-btn:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Dark mode support for buttons */
+[data-mode="dark"] .mermaid-popup-btn {
+  background: rgba(45, 45, 45, 0.95);
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-mode="dark"] .mermaid-popup-btn:hover {
+  background: #404040;
+  color: #ffffff;
+}
+
+.mermaid-popup-scale-info {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10002;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* Dark mode support for scale info */
+[data-mode="dark"] .mermaid-popup-scale-info {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Original mermaid clickable style */
+.mermaid {
+  cursor: zoom-in;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.mermaid:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-mode="dark"] .mermaid:hover {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .mermaid-popup-container {
+    /* For smaller desktops and laptops */
+    width: calc(100vw - 6vw); /* 3vw padding on each side */
+    height: calc((100vw - 6vw) * 9 / 16);
+    max-height: calc(100vh - 6vh);
+    max-width: calc((100vh - 6vh) * 16 / 9);
+  }
+}
+
+@media (max-width: 768px) {
+  .mermaid-popup-container {
+    /* For tablets */
+    width: calc(100vw - 4vw); /* 2vw padding on each side */
+    height: calc((100vw - 4vw) * 9 / 16);
+    max-height: calc(100vh - 4vh);
+    max-width: calc((100vh - 4vh) * 16 / 9);
+    border-radius: 8px;
+  }
+  
+  .mermaid-popup-controls {
+    top: 8px;
+    right: 8px;
+    gap: 8px;
+  }
+  
+  .mermaid-popup-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mermaid-popup-container {
+    /* For mobile phones */
+    width: calc(100vw - 2vw); /* 1vw padding on each side */
+    height: calc((100vw - 2vw) * 9 / 16);
+    max-height: calc(100vh - 2vh);
+    max-width: calc((100vh - 2vh) * 16 / 9);
+    border-radius: 6px;
+  }
+  
+  .mermaid-popup-controls {
+    top: 5px;
+    right: 5px;
+    gap: 5px;
+  }
+  
+  .mermaid-popup-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .mermaid-popup-scale-info {
+    bottom: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}
