@@ -33,7 +33,7 @@ github:
   username: MinePacu          # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: MinePacu_            # change to your twitter username
 
 social:
   # Change to your full name.
@@ -42,7 +42,7 @@ social:
   email: minepacu@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your Twitter homepage
+    - https://x.com/MinePacu_ # change to your Twitter homepage
     - https://github.com/MinePacu # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
