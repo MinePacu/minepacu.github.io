@@ -196,6 +196,14 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: "tags"
+    values:
+      layout: manual-tag
+  - scope:
+      path: "categories"
+    values:
+      layout: manual-category
 
 sass:
   style: compressed
