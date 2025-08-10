@@ -223,11 +223,13 @@ exclude:
 include:
   - .well-known
 
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+# GitHub Pages doesn't support jekyll-archives plugin
+# Using manual tag/category pages instead
+# jekyll-archives:
+#   enabled: [categories, tags]
+#   layouts:
+#     category: category
+#     tag: tag
+#   permalinks:
+#     tag: /tags/:name/
+#     category: /categories/:name/
