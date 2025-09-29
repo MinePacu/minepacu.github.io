@@ -4,9 +4,10 @@ export class TocDesktop {
     tocSelector: '#toc',
     contentSelector: '.content',
     ignoreSelector: '[data-toc-skip]',
-    headingSelector: 'h2, h3, h4',
+    headingSelector: 'h2, h3, h4, h5',
     orderedList: false,
     scrollSmooth: false,
+    collapseDepth: 0,
     headingsOffset: 16 * 2 // 2rem
   };
 

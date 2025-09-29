@@ -1,0 +1,147 @@
+/* Dark Mode Code Block Override - Jekyll 테마 기본값 사용 */
+
+[data-mode='dark'] pre,
+[data-mode='dark'] code,
+[data-mode='dark'] .highlight,
+[data-mode='dark'] .highlighter-rouge,
+[data-mode='dark'] div[class*="language-"],
+[data-mode='dark'] .rouge-table,
+[data-mode='dark'] .rouge-table td {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+  color: var(--highlighter-rouge-color) !important;
+}
+
+[data-mode='dark'] .rouge-table td.rouge-gutter,
+[data-mode='dark'] .rouge-gutter {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+  color: var(--highlight-lineno-color) !important;
+}
+
+/* Rouge 테이블 특별 처리 */
+[data-mode='dark'] table.rouge-table {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+}
+
+[data-mode='dark'] table.rouge-table tbody,
+[data-mode='dark'] table.rouge-table tr {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+}
+
+[data-mode='dark'] table.rouge-table td {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+}
+
+[data-mode='dark'] table.rouge-table td.rouge-code {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+}
+
+[data-mode='dark'] table.rouge-table td.rouge-code pre {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+}
+
+/* 모든 가능한 조합 */
+[data-mode='dark'] .rouge-table .rouge-code,
+[data-mode='dark'] .rouge-code pre,
+[data-mode='dark'] .rouge-code code {
+  background-color: var(--highlight-bg-color) !important;
+  background: var(--highlight-bg-color) !important;
+}
+
+/* Safari specific fixes with -webkit prefixes */
+@supports(-webkit-appearance: none) {
+  [data-mode='dark'] .code-block-with-filename .rouge-table .rouge-gutter,
+  [data-mode='dark'] .code-block-with-filename .rouge-table .rouge-code {
+    background: var(--highlighter-rouge-color) !important;
+    -webkit-background-color: var(--highlighter-rouge-color) !important;
+    background-color: var(--highlighter-rouge-color) !important;
+  }
+  
+  [data-mode='dark'] .code-block-with-filename .rouge-table td {
+    background: var(--highlighter-rouge-color) !important;
+    -webkit-background-color: var(--highlighter-rouge-color) !important;
+    background-color: var(--highlighter-rouge-color) !important;
+  }
+}
+
+/* XPath 기반 구체적 타겟팅 - #d0d0d0 배경 문제 해결 */
+[data-mode='dark'] #main-wrapper > div > div:first-child > main > article > div:nth-child(2) > div:first-child > div:nth-child(2) > div:nth-child(2) {
+  background: var(--highlighter-rouge-color) !important;
+  background-color: var(--highlighter-rouge-color) !important;
+}
+
+/* 더 일반적인 Rouge 테이블 셀 타겟팅 */
+[data-mode='dark'] .code-block-with-filename .rouge-table tbody tr td,
+[data-mode='dark'] .code-block-with-filename .rouge-table tbody tr td:nth-child(1),
+[data-mode='dark'] .code-block-with-filename .rouge-table tbody tr td:nth-child(2) {
+  background: var(--highlighter-rouge-color) !important;
+  background-color: var(--highlighter-rouge-color) !important;
+}
+
+/* Rouge 테이블의 모든 하위 div 요소 타겟팅 */
+[data-mode='dark'] .code-block-with-filename .rouge-table div {
+  background: var(--highlighter-rouge-color) !important;
+  background-color: var(--highlighter-rouge-color) !important;
+}
+
+/* 코드 관련 요소만 다크 배경 - Safari 강화 */
+html[data-mode='dark'] pre,
+html[data-mode='dark'] code,
+html[data-mode='dark'] .highlight,
+html[data-mode='dark'] .highlighter-rouge,
+html[data-mode='dark'] div[class*="language-"],
+html[data-mode='dark'] .rouge-table,
+html[data-mode='dark'] .rouge-table *:not(.rouge-gutter) {
+  background-color: #161b22 !important;
+  background: #161b22 !important;
+  -webkit-background-color: #161b22 !important;
+}
+
+/* Safari 특별 처리 */
+html[data-mode='dark'] .rouge-gutter {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
+  -webkit-background-color: #0d1117 !important;
+}
+
+/* 더욱 구체적인 규칙들 */
+html[data-mode='dark'] body .content pre,
+html[data-mode='dark'] body .content code,
+html[data-mode='dark'] body .content .highlight,
+html[data-mode='dark'] body .content .highlighter-rouge,
+html[data-mode='dark'] body .content div[class*="language-"],
+html[data-mode='dark'] body .content .rouge-table,
+html[data-mode='dark'] body .content .rouge-table td {
+  background-color: #161b22 !important;
+  background: #161b22 !important;
+}
+
+html[data-mode='dark'] body .content .rouge-table td.rouge-gutter,
+html[data-mode='dark'] body .content .rouge-gutter {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
+}
+
+/* code-block-with-filename 특정 */
+[data-mode='dark'] .code-block-with-filename pre,
+[data-mode='dark'] .code-block-with-filename code,
+[data-mode='dark'] .code-block-with-filename .highlight,
+[data-mode='dark'] .code-block-with-filename .highlighter-rouge,
+[data-mode='dark'] .code-block-with-filename div[class*="language-"],
+[data-mode='dark'] .code-block-with-filename .rouge-table,
+[data-mode='dark'] .code-block-with-filename .rouge-table td {
+  background-color: #161b22 !important;
+  background: #161b22 !important;
+}
+
+[data-mode='dark'] .code-block-with-filename .rouge-table td.rouge-gutter,
+[data-mode='dark'] .code-block-with-filename .rouge-gutter {
+  background-color: #0d1117 !important;
+  background: #0d1117 !important;
+}

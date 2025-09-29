@@ -306,6 +306,26 @@ header {
 
     ul {
       padding-left: 0.75rem;
+      
+      /* h4 headings styling */
+      ul {
+        padding-left: 0.75rem;
+        font-size: 0.8rem;
+        
+        .toc-link {
+          padding-left: 1.5rem;
+        }
+        
+        /* h5 headings styling */
+        ul {
+          padding-left: 0.75rem;
+          font-size: 0.75rem;
+          
+          .toc-link {
+            padding-left: 2rem;
+          }
+        }
+      }
     }
   }
 
@@ -489,7 +509,8 @@ header {
 
 h2,
 h3,
-h4 {
+h4,
+h5 {
   @include bp.xl {
     scroll-margin-top: 2rem;
   }
