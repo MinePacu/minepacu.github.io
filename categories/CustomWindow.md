@@ -2,5 +2,5 @@
 layout: manual-category
 title: CustomWindow
 category: CustomWindow
-permalink: /categories/CustomWindow
+permalink: /categories/customwindow/
 ---
