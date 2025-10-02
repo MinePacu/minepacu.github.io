@@ -10,7 +10,15 @@
         "isDefault": true
       },
       "problemMatcher": [],
-      "detail": "Runs the Jekyll server with live reload."
+      "detail": "Runs the Jekyll server with live reload.",
+      "options": {
+        "env": {
+          "LANG": "ko_KR.UTF-8",
+          "LC_ALL": "ko_KR.UTF-8",
+          "LC_CTYPE": "ko_KR.UTF-8",
+          "RUBYOPT": "-Eutf-8"
+        }
+      }
     },
     {
       "label": "Build Jekyll Site",
@@ -20,7 +28,23 @@
         "kind": "build"
       },
       "problemMatcher": [],
-      "detail": "Build the Jekyll site for production."
+      "detail": "Build the Jekyll site for production.",
+      "options": {
+        "env": {
+          "LANG": "ko_KR.UTF-8",
+          "LC_ALL": "ko_KR.UTF-8",
+          "LC_CTYPE": "ko_KR.UTF-8",
+          "RUBYOPT": "-Eutf-8"
+        }
+      }
+    },
+    {
+      "label": "Run Jekyll Server (UTF-8)",
+      "type": "shell",
+      "command": "./tools/serve-utf8.sh",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "Runs the Jekyll server with UTF-8 encoding support for Korean paths."
     }
   ]
 }

@@ -12,6 +12,9 @@ baseurl: ''
 # otherwise, the layout language will use the default value of 'en'.
 lang: ko-KR
 
+# Encoding settings for UTF-8 support
+encoding: utf-8
+
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Seoul

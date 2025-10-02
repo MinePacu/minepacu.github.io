@@ -8,6 +8,12 @@
 
 set -eu
 
+# UTF-8 인코딩 환경 변수 설정 (한글 경로 지원)
+export LANG=ko_KR.UTF-8
+export LC_ALL=ko_KR.UTF-8
+export LC_CTYPE=ko_KR.UTF-8
+export RUBYOPT="-Eutf-8"
+
 SITE_DIR="_site"
 
 _config="_config.yml"
