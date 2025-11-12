@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Alert Blocks 사용 가이드
-permalink: /guides/alert-blocks/
+icon: fas fa-lightbulb
+order: 5
 ---
 
 # GitHub-style Alert Blocks 사용 가이드
