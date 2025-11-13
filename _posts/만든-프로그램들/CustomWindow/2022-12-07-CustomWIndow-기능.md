@@ -1,8 +1,8 @@
 ---
 title: CustomWIndow 기능
 date: 2022-12-07 22:30 +0900
-categories: [프로그램, 만든 프로그램들, CustomWindow]
-tags: [program]
+categories: [만든 프로그램들, CustomWindow]
+tags: [customwindow, program, features]
 ---
 
 ## 기본 설정

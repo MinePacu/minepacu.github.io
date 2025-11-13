@@ -40,7 +40,7 @@ GitHub 스타일의 Alert/Callout 블록 기능이 구현되었습니다. 마크
 
 ```markdown
 > [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+> Key information users need to know to achieIve their goal.
 ```
 
 ### 4. **Warning (경고)** ⚠️

@@ -1,8 +1,8 @@
 ---
 title: "CustomWindow - DComp 로직"
 date: 2025-09-27 15:30 +0900
-categories: [프로그램, 만든 프로그램들, CustomWindow]
-tags: [modify]
+categories: [만든 프로그램들, CustomWindow]
+tags: [customwindow, development, dcomp, problem-solving]
 mermaid: true
 ---
 
