@@ -2,7 +2,7 @@
 title: CraftPresence - DiscordSDK - private 멤버
 date: 2025-11-13 22:00:00 +0900
 categories: [만든 프로그램들, CraftPresence]
-tags: [craftpresence, minecraft, discord-rpc, java, problem-solving]
+tags: [craftpresence, discord-rpc]
 ---
 
 이번엔 Wrapper 안에 있는 함수들에 대해 설명해보겠습니다.
