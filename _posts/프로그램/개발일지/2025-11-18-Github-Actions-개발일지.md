@@ -1,6 +1,6 @@
 ---
 title: "[251118] 개발 일지 - Github Actions 입문 + 문제 해결기"
-date: 2025-11-10 10:16 +0900
+date: 2025-11-18 15:16 +0900
 categories: [프로그램, 일지]
 tags: [diary]
 ---

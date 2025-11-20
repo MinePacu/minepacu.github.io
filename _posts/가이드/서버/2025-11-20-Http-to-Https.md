@@ -1,6 +1,6 @@
 ---
 title: Code-server 구축해보기 - 1
-date: 2025-11-12 12:30 +0900
+date: 2025-11-20 12:30 +0900
 categories: [가이드, 서버]
 tags: [server-setup]
 mermaid: true
